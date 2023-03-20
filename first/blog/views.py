@@ -12,7 +12,7 @@ def new(request):
     return HttpResponse("placeholder to display a new form to create a new blog")
 
 def create(request):
-    return redirect("/")
+    return redirect("/blogs")
 
 def show(request, num):
     return HttpResponse(f"placeholder to display blog number: {num}")
@@ -21,7 +21,7 @@ def edit(request, num):
     return HttpResponse("placeholder to edit blog %s" % num)
 
 def destroy(request, num):
-    return redirect("/")
+    return redirect("/blogs")
 
 def package(request):
     return JsonResponse({"title":"My first blog", "content":"Lorem, ipsum dolor sit ament consectetur adipisicing elit."})
@@ -33,5 +33,3 @@ def names(request, name):
     }
 
     return render(request, "index.html", context)
-
-# Create your views here.

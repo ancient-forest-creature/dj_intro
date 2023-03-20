@@ -6,14 +6,13 @@ import random, datetime
 def index(request):
     if 'gold' not in request.session:
         request.session['gold'] = 0
-        print(request.session['gold'])
         request.session['activity'] = ""
     return render(request, 'index.html')
 
-def process_money(request):
-    location = request.POST['location']
+def process_money(request, loc):
+    location = loc
+    # location = request.POST['location']
     now = datetime.datetime.now().strftime('%Y/%m/%d %I:%M %p')
-    print(type(request.POST['location']))
     if location == 'farm':
         turn = random.randint(10,20)
     elif location == 'cave':

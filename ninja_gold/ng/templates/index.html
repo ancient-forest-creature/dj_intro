@@ -20,7 +20,7 @@
         <div class="d-flex justify-content-around mt-5">
             <div class="card bg-light text-dark">
                 <div class="card-body p-5" style="width: 18rem;">
-                    <form action="/process_money" method="post">
+                    <form action="{% url 'pm' loc='farm' %}" method="post">
                         {% csrf_token %}
                         <h2>Farm</h2>
                         <p>(earn 10-20 gold)</p>
@@ -31,7 +31,7 @@
             </div>
             <div class="card bg-light text-dark">
                 <div class="card-body p-5" style="width: 18rem;">
-                    <form action="/process_money" method="post">
+                    <form action="{% url 'pm' loc='cave' %}" method="post">
                         {% csrf_token %}
                         <h2>Cave</h2>
                         <p>(earn 5-10 gold)</p>
@@ -42,7 +42,7 @@
             </div>            
             <div class="card bg-light text-dark">
                 <div class="card-body p-5" style="width: 18rem;">
-                    <form action="/process_money" method="post">
+                    <form action="{% url 'pm' loc='house' %}" method="post">
                         {% csrf_token %}
                         <h2>House</h2>
                         <p>(earn 2-5 gold)</p>
@@ -53,7 +53,7 @@
             </div>            
             <div class="card bg-light text-dark">
                 <div class="card-body p-5" style="width: 18rem;">
-                    <form action="/process_money" method="post">
+                    <form action="{% url 'pm' loc='casino' %}" method="post">
                         {% csrf_token %}
                         <h2>Casino</h2>
                         <p>(earn/takes 0-50 gold)</p>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div>
-            <a href="/reset" class="btn btn-dark my-4">Reset Gold</a>
+            <a href="{% url 'reset' %}" class="btn btn-dark my-4">Reset Gold</a>
         </div>
         <div>
             <h5>Activities</h5>
